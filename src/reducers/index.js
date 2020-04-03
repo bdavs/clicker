@@ -1,4 +1,5 @@
-export default (state = {value:0n, level:1, interval:1}, action) => {
+
+export default (state = {value:0, level:1, interval:0}, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -18,7 +19,7 @@ export default (state = {value:0n, level:1, interval:1}, action) => {
     case 'INTERVAL':
       return {
         ...state,
-        interval: state.interval +1
+        interval: state.interval + 1
       }
     default:
       return state

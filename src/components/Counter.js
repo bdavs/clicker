@@ -7,7 +7,6 @@ class Counter extends Component {
     super(props);
     this.incrementAsync = this.incrementAsync.bind(this);
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
-    this.changeDelay = this.changeDelay.bind(this);
   }
 
   incrementIfOdd() {
@@ -20,11 +19,15 @@ class Counter extends Component {
     setTimeout(this.props.onIncrement, 1000)
   }
 
-  changeDelay() {
-    this.props.onInterval()
-    clearInterval(this.timer);
-    this.delay = 5000 / this.props.interval
-    this.timer = setInterval(() => this.props.onIncrement(), this.delay);
+  componentDidUpdate(nextProps) {
+    const { interval } = this.props
+    if (nextProps.interval !== interval) {
+      if (interval) {
+        clearInterval(this.timer);
+        this.delay = 5000 / this.props.interval
+        this.timer = setInterval(() => this.props.onIncrement(), this.delay);
+      }
+    }
   }
 
   // componentDidMount(){
@@ -51,23 +54,23 @@ class Counter extends Component {
           -
         </button>
         {' '}
-        <button onClick={this.incrementIfOdd}>
+        {/* <button onClick={this.incrementIfOdd}>
           Increment if odd
         </button>
         {' '}
         <button onClick={this.incrementAsync}>
           Increment async
-        </button>
+        </button> */}
         <br/>
         <button onClick={onLevel}>
           <h3>+{level}</h3>
         </button>
         {' '}
-        <button onClick={this.changeDelay}>
+        <button onClick={onInterval}>
           <h3>Speed Up Level: {interval}</h3>
         </button>
         {' '}
-        interval: {5.0/interval}
+        interval: {5.0/interval} seconds
       </p>
     )
   }
@@ -88,6 +91,17 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(Counter);
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+onIncrement: () => dispatch({ type: "INCREMENT" }),
+onDecrement: () => dispatch({ type: "DECREMENT" }),
+onLevel: () => dispatch({ type: "LEVELUP" }),
+onInterval: () => dispatch({ type: "INTERVAL" }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 // export default Counter

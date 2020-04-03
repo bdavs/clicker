@@ -10,6 +10,7 @@ import * as serviceWorker from "./serviceWorker";
 import Counter from "./components/Counter";
 import counter from "./reducers";
 import { Provider } from "react-redux";
+import Scrolly from "./Scrolly";
 
 const store = createStore(counter);
 
@@ -17,13 +18,8 @@ const render = () =>
   ReactDOM.render(
 
     <Provider store={store}>
-      <Counter
-        // value={store.getState().value}
-        onIncrement={() => store.dispatch({ type: "INCREMENT" })}
-        onDecrement={() => store.dispatch({ type: "DECREMENT" })}
-        onLevel={() => store.dispatch({ type: "LEVELUP" })}
-        onInterval={() => store.dispatch({ type: "INTERVAL" })}
-      />
+      <Counter/>
+      <Scrolly/>
     </Provider>,
     document.getElementById("root")
   );
