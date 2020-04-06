@@ -16,10 +16,17 @@ const store = createStore(counter);
 
 const render = () =>
   ReactDOM.render(
-
     <Provider store={store}>
-      <Counter/>
-      <Scrolly/>
+      <div class="grid-container">
+        <div class="grid-item">
+          <Counter />
+        </div>
+        <div class="grid-item">
+          <div id="scrolly" className="scrolly">
+            <Scrolly />
+          </div>
+        </div>
+      </div>
     </Provider>,
     document.getElementById("root")
   );

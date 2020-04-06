@@ -16,11 +16,10 @@ class Scrolly extends React.Component {
   fetchMoreData = () => {
     // a fake async api call like which sends
     // 20 more records in 1.5 secs
-    
-      this.setState({
-        items: this.state.items.concat(Array.from({ length: 20 }))
-      });
-    
+
+    this.setState({
+      items: this.state.items.concat(Array.from({ length: 20 }))
+    });
   };
 
   render() {
@@ -33,6 +32,14 @@ class Scrolly extends React.Component {
           next={this.fetchMoreData}
           hasMore={true}
           loader={<h4>Loading...</h4>}
+          scrollableTarget={"scrolly"}
+          // height={300}
+          // initialScrollY={10}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
         >
           {this.state.items.map((i, index) => (
             <div style={style} key={index}>
@@ -45,4 +52,4 @@ class Scrolly extends React.Component {
   }
 }
 
-export default Scrolly
+export default Scrolly;
