@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import { createStore } from "redux";
 // import rootReducer from './reducers'
 import "./index.css";
-// import App from './App';
-// import * as serviceWorker from "./serviceWorker";
 
 import counter from "./reducers";
-import { Provider } from "react-redux";
 import Layout from "./components/Layout"
 
 const store = createStore(counter);

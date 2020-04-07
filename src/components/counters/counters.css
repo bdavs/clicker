@@ -1,0 +1,9 @@
+.counter-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .counter-item {
+    flex-grow: 1;
+    padding: 5px;
+  }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 import Scrolly from "./Scrolly";
-import Counter from "./Counter";
+import CountrContainer from "./counters/CounterContainer";
 import ClickCount from "./ClickCount";
 
 import "../index.css";
@@ -31,10 +31,10 @@ class Layout extends Component {
           <ClickCount />
         </div>
         <div className="container">
-          <div className="item">
-            <Counter />
+          <div className="item ">
+            <CountrContainer/>
           </div>
-          <DisplayScrolly totalClicks={totalClicks}/>
+          <DisplayScrolly totalClicks={totalClicks} />
         </div>
       </div>
     );
