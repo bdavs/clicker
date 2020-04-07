@@ -1,15 +1,15 @@
 
-export default (state = {value:0, level:1, interval:0}, action) => {
+export default (state = {totalClicks:0, level:1, interval:0}, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {
         ...state,
-          value: state.value + state.level
+          totalClicks: state.totalClicks + state.level
         };
     case 'DECREMENT':
       return {
         ...state,
-        value: state.value - state.level
+        totalClicks: state.totalClicks - state.level
       };
     case 'LEVELUP':
       return {

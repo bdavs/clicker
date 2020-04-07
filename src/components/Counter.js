@@ -10,7 +10,7 @@ class Counter extends Component {
   }
 
   incrementIfOdd() {
-    if (this.props.value % 2 !== 0) {
+    if (this.props.totalClicks % 2 !== 0) {
       this.props.onIncrement()
     }
   }
@@ -41,10 +41,10 @@ class Counter extends Component {
   }
 
   render() {
-    const { value, level, interval, onIncrement, onDecrement, onLevel, onInterval} = this.props
+    const { totalClicks, level, interval, onIncrement, onDecrement, onLevel, onInterval} = this.props
     return (
       <p>
-        Clicked: {value} times
+        Clicked: {totalClicks} times
         {' '}
         <button onClick={onIncrement}>
           +
@@ -85,12 +85,11 @@ Counter.propTypes = {
 
 function mapStateToProps(state){
   return {
-      value: state.value,
+      totalClicks: state.totalClicks,
       level: state.level,
       interval: state.interval
   }
 }
-
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -103,5 +102,3 @@ onInterval: () => dispatch({ type: "INTERVAL" }),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
-
-// export default Counter

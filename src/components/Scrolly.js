@@ -25,7 +25,7 @@ class Scrolly extends React.Component {
   render() {
     return (
       <div>
-        <h1>demo: react-infinite-scroll-component</h1>
+        <h1>Scrolly</h1>
         <hr />
         <InfiniteScroll
           dataLength={this.state.items.length}

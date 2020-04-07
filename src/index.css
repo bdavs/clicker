@@ -9,7 +9,8 @@ body {
 
 .scrolly {
   overflow-y: auto;
-  height: 90vh;
+  height: 75vh;
+  border: 5px solid rgb(33, 89, 243)
 }
 
 code {
@@ -17,17 +18,36 @@ code {
     monospace;
 }
 
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
+.container {
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: auto auto auto; */
   background-color: #2196F3;
   padding: 10px;
 }
 
-.grid-item {
+.item {
+  flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
+  text-align: center;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: auto auto auto; */
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+.upper-item {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 20px;
   text-align: center;
 }
