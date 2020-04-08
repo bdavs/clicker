@@ -1,26 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Scrolly from "./Scrolly";
-import CountrContainer from "./counters/CounterContainer";
+import ScrollerContainer from "./scrollers/ScrollerContainer";
+import CounterContainer from "./counters/CounterContainer";
 import ClickCount from "./ClickCount";
 
 import "../index.css";
-
-function DisplayScrolly(props) {
-  const totalClicks = props.totalClicks;
-  if (totalClicks > 5) {
-    return (
-      <div className="item">
-        <div id="scrolly" className="scrolly">
-          <Scrolly />
-        </div>
-      </div>
-    );
-  } else {
-    return null;
-  }
-}
 
 class Layout extends Component {
   render() {
@@ -31,10 +16,8 @@ class Layout extends Component {
           <ClickCount />
         </div>
         <div className="container">
-          <div className="item ">
-            <CountrContainer/>
-          </div>
-          <DisplayScrolly totalClicks={totalClicks} />
+          <CounterContainer />
+          <ScrollerContainer />
         </div>
       </div>
     );
