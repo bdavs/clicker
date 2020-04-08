@@ -6,11 +6,11 @@ import Counter from "./Counter";
 import "./counters.css";
 
 function DisplayCounter(props) {
-  const totalClicks = props.totalClicks;
-  if (totalClicks > 3) {
+  const { totalClicks, minClicks, name } = props;
+  if (totalClicks >= minClicks) {
     return (
       <div className="counter-item">
-        <Counter test={"thisistest"} />
+        <Counter name={name} />
       </div>
     );
   } else {
@@ -23,11 +23,19 @@ class CounterContainer extends Component {
     const { totalClicks } = this.props;
 
     return (
-      <div className="counter-container">
-        <div className="counter-item">
-          <Counter test={"thisistest"} />
+      <div className="item ">
+        <div className="counter-container">
+          <DisplayCounter
+            name={"first"}
+            totalClicks={totalClicks}
+            minClicks={0}
+          />
+          <DisplayCounter
+            name={"second"}
+            totalClicks={totalClicks}
+            minClicks={5}
+          />
         </div>
-        <DisplayCounter totalClicks={totalClicks}/>
       </div>
     );
   }

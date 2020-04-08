@@ -8,7 +8,7 @@ class Counter extends Component {
     if (nextProps.interval !== interval) {
       if (interval) {
         clearInterval(this.timer);
-        this.delay = 5000 / this.props.interval
+        this.delay = Math.round(5000 / this.props.interval)
         this.timer = setInterval(() => this.props.onIncrement(), this.delay);
       }
     }
@@ -20,20 +20,17 @@ class Counter extends Component {
   }
 
   render() {
-    const { totalClicks, level, interval, onIncrement, onDecrement, onLevel, onInterval, test} = this.props
+    const { totalClicks, level, interval, onIncrement, onLevel, onInterval, name} = this.props
     return (
       <p>
-        test: {test} <br/>
+        Name: {name} <br/>
         Clicked: {totalClicks} times
         {' '}
         <button onClick={onIncrement} >
-          <h2>+</h2>
+          <h2>CLICK HERE</h2>
         </button>
         {' '}
-        {/* <button onClick={onDecrement}>
-          -
-        </button>
-        {' '} */}
+
         <br/>
         <button onClick={onLevel}>
           <h3>+{level}</h3>
@@ -43,7 +40,7 @@ class Counter extends Component {
           <h3>Speed Up Level: {interval}</h3>
         </button>
         {' '}
-        interval: {5.0/interval} seconds
+        ticks: {Math.round(5000/interval)} 
       </p>
     )
   }
