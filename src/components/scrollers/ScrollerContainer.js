@@ -35,11 +35,11 @@ class ScrollerContainer extends Component {
             totalClicks={totalClicks}
             minClicks={0}
           />
-          <DisplayScrolly
+          {/* <DisplayScrolly
             name={"second"}
             totalClicks={totalClicks}
             minClicks={5}
-          />
+          /> */}
         </div>
       </div>
     );
