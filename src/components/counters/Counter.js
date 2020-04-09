@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 class Counter extends Component {
-  componentDidUpdate(nextProps) {
+  componentDidUpdate(prevProps) {
     const { interval } = this.props;
-    if (nextProps.interval !== interval) {
+    if (prevProps.interval !== interval) {
       if (interval) {
         clearInterval(this.timer);
         this.delay = Math.round(5000 / this.props.interval);
-        this.timer = setInterval(() => this.props.onIncrement(), this.delay);
+        this.timer = setInterval(() => this.props.onIncrement(this.props.id), this.delay);
       }
     }
   }
@@ -21,7 +21,7 @@ class Counter extends Component {
 
   render() {
     const {
-      totalClicks,
+      clicks,
       name,
       id,
       level,
@@ -33,8 +33,8 @@ class Counter extends Component {
     return (
       <p>
         Name: {name} <br />
-        Clicked: {totalClicks} times{" "}
-        <button onClick={onIncrement}>
+        Clicked: {clicks} times{" "}
+        <button onClick={() => onIncrement(id)}>
           <h2>CLICK HERE</h2>
         </button>{" "}
         <br />
@@ -60,6 +60,7 @@ Counter.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     totalClicks: state.totalClicks,
+    clicks: state.counterData.find((p) => p.id === ownProps.id).clicks,
     level: state.counterData.find((p) => p.id === ownProps.id).level,
     interval: state.counterData.find((p) => p.id === ownProps.id).interval,
   };

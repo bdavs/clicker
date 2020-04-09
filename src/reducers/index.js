@@ -1,6 +1,6 @@
 const initialState = {
   totalClicks: 0,
-  counterData: [{ id: 0, name: "first", level: 1, interval: 0 }],
+  counterData: [],
   // level: 1,
   // interval: 0,
 };
@@ -8,9 +8,16 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "INCREMENT": {
+      const counter = state.counterData.find((p) => p.id === action.id);
+      const index = state.counterData.findIndex(p => p.id === action.id);
       return {
         ...state,
-        totalClicks: state.totalClicks + 1,
+        totalClicks: state.totalClicks + counter.level,
+        counterData: [
+          ...state.counterData.slice(0, index),
+          { ...counter, clicks: counter.clicks + counter.level },
+          ...state.counterData.slice(index + 1),
+        ],
       };
     }
     case "DECREMENT": {
@@ -20,26 +27,28 @@ export default (state = initialState, action) => {
       };
     }
     case "LEVELUP": {
-      console.log(action);
-      console.log(action.id);
       const counter = state.counterData.find((p) => p.id === action.id);
+      const index = state.counterData.findIndex(p => p.id === action.id);
       return {
         ...state,
         counterData: [
-          ...state.counterData.filter((p) => p !== counter),
+          ...state.counterData.slice(0, index),
           { ...counter, level: counter.level + 1 },
+          ...state.counterData.slice(index + 1),
         ],
-        // level: state.level + 1,
       };
     }
     case "INTERVAL": {
       const counter = state.counterData.find((p) => p.id === action.id);
+      const index = state.counterData.findIndex(p => p.id === action.id);
+
       return {
         ...state,
-        // interval: state.interval + 1,
         counterData: [
-          ...state.counterData.filter((p) => p !== counter),
+          ...state.counterData.slice(0, index),
           { ...counter, interval: counter.interval + 1 },
+          ...state.counterData.slice(index + 1),
+
         ],
       };
     }
@@ -56,15 +65,3 @@ export default (state = initialState, action) => {
       return state;
   }
 };
-
-// const posts = (state = null, action) => {
-//   const post = state.posts.find(p => p.id === action.payload.id);
-//   switch(action.type) {
-//     case "PUBLISH_POST":
-//       return { ...state, posts: [ ...state.posts.filter(p => p !== post), { ...post, status: 1 } ] };
-//     case "UNPUBLISH_POST":
-//       return { ...state, posts: [ ...state.posts.filter(p => p !== post), { ...post, status: 0 } ] };
-//     default:
-//       return state;
-//   }
-// }

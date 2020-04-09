@@ -1,0 +1,15 @@
+[
+  {
+    "id": 0,
+    "name": "firstt",
+    "minClicks": 0
+  }, {
+    "id": 1,
+    "name": "second",
+    "minClicks": 5
+  }, {
+    "id": 2,
+    "name": "third",
+    "minClicks": 13
+  }
+]
