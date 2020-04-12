@@ -38,14 +38,17 @@ class CounterContainer extends Component {
   }
 
   componentDidMount() {
-    const newCounter = {
-      id: allCounters[0].id,
-      name: allCounters[0].name,
-      clicks: 0,
-      level: 1,
-      interval: 0,
-    };
-    this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+    // empty list
+    if (this.props.counterData.length === 0) {
+      const newCounter = {
+        id: allCounters[0].id,
+        name: allCounters[0].name,
+        clicks: 0,
+        level: 1,
+        interval: 0,
+      };
+      this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+    }
   }
 
   render() {
@@ -62,8 +65,8 @@ class CounterContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    totalClicks: state.totalClicks,
-    counterData: state.counterData,
+    totalClicks: state.counter.totalClicks,
+    counterData: state.counter.counterData,
   };
 }
 export default connect(mapStateToProps)(CounterContainer);

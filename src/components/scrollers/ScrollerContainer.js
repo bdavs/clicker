@@ -48,7 +48,7 @@ class ScrollerContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    totalClicks: state.totalClicks,
+    totalClicks: state.counter.totalClicks,
   };
 }
 export default connect(mapStateToProps)(ScrollerContainer);

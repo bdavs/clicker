@@ -9,7 +9,7 @@ import "../index.css";
 
 class Layout extends Component {
   render() {
-    const { totalClicks } = this.props;
+    // const { totalClicks } = this.props;
     return (
       <div className="outer-container">
         <div className="upper-item">
@@ -26,7 +26,7 @@ class Layout extends Component {
 
 function mapStateToProps(state) {
   return {
-    totalClicks: state.totalClicks,
+    totalClicks: state.counter.totalClicks,
   };
 }
 export default connect(mapStateToProps)(Layout);

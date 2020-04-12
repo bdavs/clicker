@@ -3,15 +3,25 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 class Counter extends Component {
+
+  setCounterInterval(interval) {
+    if (interval > 0) {
+      clearInterval(this.timer);
+      this.delay = Math.round(5000 / interval);
+      this.timer = setInterval(() => this.props.onIncrement(this.props.id), this.delay);
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const { interval } = this.props;
     if (prevProps.interval !== interval) {
-      if (interval) {
-        clearInterval(this.timer);
-        this.delay = Math.round(5000 / this.props.interval);
-        this.timer = setInterval(() => this.props.onIncrement(this.props.id), this.delay);
-      }
+      this.setCounterInterval(interval);
     }
+  }
+
+  componentDidMount() {
+    const { interval } = this.props;
+    this.setCounterInterval(interval);
   }
 
   componentWillUnmount() {
@@ -59,10 +69,10 @@ Counter.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    totalClicks: state.totalClicks,
-    clicks: state.counterData.find((p) => p.id === ownProps.id).clicks,
-    level: state.counterData.find((p) => p.id === ownProps.id).level,
-    interval: state.counterData.find((p) => p.id === ownProps.id).interval,
+    totalClicks: state.counter.totalClicks,
+    clicks: state.counter.counterData.find((p) => p.id === ownProps.id).clicks,
+    level: state.counter.counterData.find((p) => p.id === ownProps.id).level,
+    interval: state.counter.counterData.find((p) => p.id === ownProps.id).interval,
   };
 }
 

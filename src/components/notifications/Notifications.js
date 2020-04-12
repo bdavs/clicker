@@ -7,17 +7,23 @@ import {
 } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 
-import allNotifications from "./notifications.json";
+// import allNotifications from "./notifications.json";
 
 class Notifications extends Component {
 
 
+  componentDidMount() {
+
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.totalClicks !== prevProps.totalClicks) {
-      allNotifications.forEach((notification) => {
+      console.log(this.props)
+      this.props.notifications.forEach((notification) => {
         if (notification.achieved === false && this.props.totalClicks >= notification.minClicks){
           NotificationManager.success(notification.message, "Achievement Unlocked!");
-          notification.achieved = true;
+          // notification.achieved = true;
+          this.props.onTrigger(notification.id)
         }
       });
     }
@@ -53,7 +59,7 @@ class Notifications extends Component {
   };
 
   render() {
-    const { totalClicks } = this.props;
+    // const { totalClicks } = this.props;
     return (
       <div>
         <NotificationContainer />
@@ -80,7 +86,15 @@ class Notifications extends Component {
 
 function mapStateToProps(state) {
   return {
-    totalClicks: state.totalClicks,
+    totalClicks: state.counter.totalClicks,
+    notifications: state.notification,
   };
 }
-export default connect(mapStateToProps)(Notifications);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTrigger: (id) => dispatch({ type: "TRIGGER", id }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Notifications);
