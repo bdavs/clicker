@@ -1,0 +1,11 @@
+ - [ ] notifications
+   - [ ] link all new counters to notification list (may just copy)
+   - [ ] tie in individual counter clicks
+ - [x] Currency
+   - [x] cost based on total clicks
+ - [ ] theme (coronavirus?)
+ - [x] Make state persistent
+   - [x] add achievements to state 
+ - [ ] Implement scrolly box 
+   - [ ] make functional
+   - [ ] use same method as counter json
