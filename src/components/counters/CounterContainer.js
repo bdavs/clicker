@@ -16,6 +16,25 @@ function DisplayCounters(props) {
 }
 
 class CounterContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.addNewCounter = this.addNewCounter.bind(this);
+  }
+  addNewCounter(id, name,cost,multiplier) {
+    // console.log("addnewprops", id)
+    // const { id, name, cost } = props;
+    const newCounter = {
+      id: id,
+      name: name,
+      cost: cost,
+      multiplier: multiplier,
+      clicks: 0,
+      level: 1,
+      interval: 0,
+    };
+    this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.totalClicks !== prevProps.totalClicks) {
       // add any new counters to state
@@ -23,14 +42,17 @@ class CounterContainer extends Component {
         if (this.props.totalClicks >= counter.minClicks) {
           const c = this.props.counterData.find((p) => p.id === counter.id);
           if (c === undefined) {
-            const newCounter = {
-              id: counter.id,
-              name: counter.name,
-              clicks: 0,
-              level: 1,
-              interval: 0,
-            };
-            this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+            // const newCounter = {
+            //   id: counter.id,
+            //   name: counter.name,
+            //   cost: counter.cost,
+            //   clicks: 0,
+            //   level: 1,
+            //   interval: 0,
+            // };
+            // this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+            // console.log("mycounter",counter)
+            this.addNewCounter(counter.id, counter.name, counter.cost, counter.multiplier);
           }
         }
       });
@@ -39,15 +61,15 @@ class CounterContainer extends Component {
 
   componentDidMount() {
     // empty list
+    // console.log("counterdata",allCounters[0])
+
     if (this.props.counterData.length === 0) {
-      const newCounter = {
-        id: allCounters[0].id,
-        name: allCounters[0].name,
-        clicks: 0,
-        level: 1,
-        interval: 0,
-      };
-      this.props.dispatch({ type: "NEW_COUNTER", newCounter });
+      this.addNewCounter(
+        allCounters[0].id,
+        allCounters[0].name,
+        allCounters[0].cost,
+        allCounters[0].multiplier,
+      );
     }
   }
 

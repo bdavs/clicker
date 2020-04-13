@@ -18,7 +18,7 @@ class Notifications extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.totalClicks !== prevProps.totalClicks) {
-      console.log(this.props)
+      // console.log(this.props)
       this.props.notifications.forEach((notification) => {
         if (notification.achieved === false && this.props.totalClicks >= notification.minClicks){
           NotificationManager.success(notification.message, "Achievement Unlocked!");

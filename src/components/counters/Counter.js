@@ -34,22 +34,25 @@ class Counter extends Component {
       clicks,
       name,
       id,
+      cost,
       level,
+      multiplier,
       interval,
       onIncrement,
       onLevel,
       onInterval,
     } = this.props;
+    // console.log(this.props)
     return (
       <p>
-        Name: {name} <br />
+        Name: {name}   multiplier: {multiplier}<br />
         Clicked: {clicks} times{" "}
         <button onClick={() => onIncrement(id)}>
-          <h2>CLICK HERE</h2>
+          <h2>CLICK HERE {level} x {multiplier} = {level * multiplier}</h2>
         </button>{" "}
         <br />
         <button onClick={() => onLevel(id)}>
-          <h3>+{level}</h3>
+          <h3>+{level } cost: {cost}</h3>
         </button>{" "}
         <button onClick={() => onInterval(id)}>
           <h3>Speed Up Level: {interval}</h3>
@@ -68,11 +71,15 @@ Counter.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
+  // console.log("state",state)
+  // console.log("ownstate",ownProps)
   return {
     totalClicks: state.counter.totalClicks,
     clicks: state.counter.counterData.find((p) => p.id === ownProps.id).clicks,
     level: state.counter.counterData.find((p) => p.id === ownProps.id).level,
     interval: state.counter.counterData.find((p) => p.id === ownProps.id).interval,
+    cost: state.counter.counterData.find((p) => p.id === ownProps.id).cost,
+    multiplier: state.counter.counterData.find((p) => p.id === ownProps.id).multiplier,
   };
 }
 

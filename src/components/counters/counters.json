@@ -2,14 +2,20 @@
   {
     "id": 0,
     "name": "firstt",
-    "minClicks": 0
+    "minClicks": 0,
+    "multiplier": 1,
+    "cost": 0
   }, {
     "id": 1,
     "name": "second",
-    "minClicks": 5
+    "minClicks": 5,
+    "multiplier": 10,
+    "cost": 10
   }, {
     "id": 2,
     "name": "third",
-    "minClicks": 13
+    "minClicks": 13,
+    "multiplier": 100,
+    "cost": 100
   }
 ]
