@@ -9,7 +9,7 @@ import "./scrollers.css";
 
 function DisplayScrolly(props) {
   const totalClicks = props.totalClicks;
-  if (totalClicks > 5) {
+  if (totalClicks > props.minClicks) {
     return (
       <div className="item">
         <div id="scrolly" className="scrolly">
@@ -28,20 +28,15 @@ class ScrollerContainer extends Component {
     const { totalClicks } = this.props;
 
     return (
-      <div className="item ">
-        <div className="counter-container">
+      // <div className="item ">
+      //   <div className="scroller-container">
           <DisplayScrolly
             name={"first"}
             totalClicks={totalClicks}
-            minClicks={0}
+            minClicks={5000}
           />
-          {/* <DisplayScrolly
-            name={"second"}
-            totalClicks={totalClicks}
-            minClicks={5}
-          /> */}
-        </div>
-      </div>
+      //   </div>
+      // </div>
     );
   }
 }

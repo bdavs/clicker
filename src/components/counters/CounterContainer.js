@@ -21,8 +21,6 @@ class CounterContainer extends Component {
     this.addNewCounter = this.addNewCounter.bind(this);
   }
   addNewCounter(counter) {
-    // console.log("addnewprops", id)
-    // const { id, name, cost } = props;
     const newCounter = {
       id: counter.id,
       name: counter.name,
@@ -36,7 +34,10 @@ class CounterContainer extends Component {
     if (counter.id !== 0) {
       NotificationManager.info(
         "Unlocked " + counter.name + "!",
-        "New Clicker Unlocked!"
+        "New Clicker Unlocked!",
+        //5000, () => {
+          // alert("callback");
+        // }
       );
     }
   }
@@ -57,10 +58,7 @@ class CounterContainer extends Component {
 
   componentDidMount() {
     // empty list
-    console.log("counterdata", allCounters[0]);
-    console.log(this.props);
     if (this.props.counterData.length === 0) {
-      console.log("YES!");
       this.addNewCounter(allCounters[0]);
     }
   }

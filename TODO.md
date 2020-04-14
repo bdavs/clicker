@@ -1,5 +1,5 @@
  - [ ] notifications
-   - [ ] link all new counters to notification list (may just copy)
+   - [x] link all new counters to notification list (may just copy)
    - [ ] tie in individual counter clicks
  - [x] Currency
    - [x] cost based on total clicks
@@ -9,3 +9,9 @@
  - [ ] Implement scrolly box 
    - [ ] make functional
    - [ ] use same method as counter json
+ - [ ] css, like so much css
+ - [ ] really big numbers
+ - [ ] import/export 
+ - [ ] more minigames
+ - [ ] newgame++ 
+ 

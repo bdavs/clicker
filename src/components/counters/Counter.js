@@ -45,7 +45,7 @@ class Counter extends Component {
     // console.log(this.props)
     return (
       <p>
-        Name: {name}   multiplier: {multiplier}<br />
+        Name: {name} | Multiplier: {multiplier}<br />
         Clicked: {clicks} times{" "}
         <button onClick={() => onIncrement(id)}>
           <h2>CLICK HERE {level} x {multiplier} = {level * multiplier}</h2>

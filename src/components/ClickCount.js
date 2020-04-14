@@ -5,7 +5,12 @@ class ClickCount extends Component {
   render() {
     const {totalClicks} = this.props;
 
-    return <h1>{totalClicks}</h1>;
+    return (
+    <div>
+      
+      <h1>Clicks:<br/>{totalClicks}</h1>
+    </div>
+    );
   }
 }
 
