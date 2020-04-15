@@ -3,6 +3,7 @@
    - [ ] tie in individual counter clicks
  - [x] Currency
    - [x] cost based on total clicks
+   - [ ] add cost to speed up 
  - [ ] theme (coronavirus?)
  - [x] Make state persistent
    - [x] add achievements to state 
@@ -14,4 +15,5 @@
  - [ ] import/export 
  - [ ] more minigames
  - [ ] newgame++ 
+ - [ ] find better way to clear the local storage 
  
