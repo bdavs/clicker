@@ -4,7 +4,9 @@
  - [x] Currency
    - [x] cost based on total clicks
    - [ ] add cost to speed up 
- - [ ] theme (coronavirus?)
+ - [ ] theme 
+   - [ ] coronavirus
+   - [ ] radiation, banana for scale 
  - [x] Make state persistent
    - [x] add achievements to state 
  - [ ] Implement scrolly box 
