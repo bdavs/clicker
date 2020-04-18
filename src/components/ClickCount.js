@@ -23,6 +23,7 @@ const fmt = {
 }
 
 BigNumber.config({
+  DECIMAL_PLACES: 2,
   FORMAT: fmt
 });
 
@@ -41,15 +42,15 @@ class ClickCount extends Component {
           break;
       case (x < 6):
           ending = 'uSv'
-          result = bntc.dividedToIntegerBy(1e3)
+          result = bntc.div(1e3)
           break;
       case (x < 9):
           ending = 'mSv'
-          result = bntc.dividedToIntegerBy(1e6)
+          result = bntc.div(1e6)
           break;
       default:
           ending = 'Sv'
-          result = bntc.dividedToIntegerBy(1e9)
+          result = bntc.div(1e9)
           break;
     }
     
