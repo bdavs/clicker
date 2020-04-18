@@ -66,10 +66,10 @@ class CounterContainer extends Component {
   render() {
     const { counterData } = this.props;
     return (
-      <div className="item ">
-        <div className="counter-container">
+      <div className="item counter-container">
+        {/* <div className=""> */}
           <DisplayCounters counterData={counterData} />
-        </div>
+        {/* </div> */}
       </div>
     );
   }

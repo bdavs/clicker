@@ -1,3 +1,4 @@
+/* this will include pretty much everything */
 body {
   margin: 5px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,11 +8,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* unsure */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* all the lower game area */
 .container {
   display: flex;
   flex-direction: row;
@@ -19,15 +22,17 @@ code {
   padding: 10px;
 }
 
+/* each game section  */
 .item {
   flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  padding: 10px;
   font-size: 30px;
-  text-align: center;
+  /* text-align: center; */
 }
 
+/* includes the click count and all the game below */
 .outer-container {
   display: flex;
   flex-direction: column;
@@ -35,6 +40,7 @@ code {
   padding: 5px;
 }
 
+/* basically just the click count */
 .upper-item {
   flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.8);
