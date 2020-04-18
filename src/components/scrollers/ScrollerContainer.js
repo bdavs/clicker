@@ -9,7 +9,7 @@ import "./scrollers.css";
 
 function DisplayScrolly(props) {
   const totalClicks = props.totalClicks;
-  if (totalClicks > props.minClicks) {
+  if (props.enabled && totalClicks > props.minClicks) {
     return (
       <div className="item">
         <div id="scrolly" className="scrolly">
@@ -31,7 +31,7 @@ class ScrollerContainer extends Component {
       // <div className="item ">
       //   <div className="scroller-container">
           <DisplayScrolly
-            name={"first"}
+            enabled = {false}
             totalClicks={totalClicks}
             minClicks={5000}
           />
