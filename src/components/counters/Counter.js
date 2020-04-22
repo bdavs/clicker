@@ -56,13 +56,13 @@ class Counter extends Component {
         <div className="clicks">
           Clicked: {clicks} times
         </div>
-        <button onClick={() => onIncrement(id)}>
+        <button className="click-btn btn" onClick={() => onIncrement(id)}>
           <h2>CLICK HERE {level} x {multiplier} = {level * multiplier}</h2>
         </button>
-        <button onClick={() => onLevel(id)}>
+        <button className="level-btn btn" onClick={() => onLevel(id)}>
           <h3>+{level } cost: {cost}</h3>
         </button>
-        <button onClick={() => onInterval(id)}>
+        <button className="tick-btn btn" onClick={() => onInterval(id)}>
           <h3>Speed Up Level: {interval} ticks: {Math.round(5000 / interval)}</h3>
         </button>
       </p>

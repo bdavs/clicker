@@ -9,7 +9,13 @@
 }
 
 .counter-name {
-  display: inline;
+  display: inline-flex;
+  font: Arial;
+  text-decoration: overline underline double aqua;
+  /* color: blueviolet; */
+  /* text-shadow: blueviolet; */
+  /* text-emphasis: bold; */
+  /* text-decoration: dashed; */
 }
 
 .multiplier {
@@ -18,4 +24,35 @@
 
 .clicks {
   display: none;
+}
+
+
+.btn {
+  color:#333333;
+  background-color: #d2dcf8; 
+  border-radius: 10px;
+  outline: none;
+}
+
+.click-btn {
+  display: inline-flex;
+  margin: 0.5em;
+  /* padding: 5px; */
+  /* border: 5px; */
+}
+
+.btn:hover {
+  color: red;
+}
+
+.click-btn:active {
+  color: blue;
+}
+
+.level-btn {
+  display: inline-flex;
+}
+
+.tick-btn {
+  display: inline-flex;
 }
