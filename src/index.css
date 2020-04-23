@@ -1,6 +1,6 @@
 /* this will include pretty much everything */
 body {
-  margin: 5px;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -19,7 +19,7 @@ code {
   display: flex;
   flex-direction: row;
   background-color: #2196F3;
-  padding: 10px;
+  padding-top: 5px;
 }
 
 /* each game section  */
@@ -28,7 +28,7 @@ code {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 10px;
-  font-size: 30px;
+  /* font-size: 1.3em; */
   /* text-align: center; */
 }
 

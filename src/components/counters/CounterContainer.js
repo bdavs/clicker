@@ -9,9 +9,9 @@ import "./counters.css";
 function DisplayCounters(props) {
   const { counterData } = props;
   return counterData.map((counter) => (
-    <div key={counter.id} className="counter-item">
+    // <div key={counter.id}>
       <Counter key={counter.id} name={counter.name} id={counter.id} />
-    </div>
+    // </div>
   ));
 }
 

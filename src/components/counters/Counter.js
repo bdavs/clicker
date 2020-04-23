@@ -46,7 +46,7 @@ class Counter extends Component {
     } = this.props;
 
     return (
-      <p>
+      <div  className="counter-item">
         <div className="counter-name" >
           {name}:   
         </div>
@@ -57,15 +57,15 @@ class Counter extends Component {
           Clicked: {clicks} times
         </div>
         <button className="click-btn btn" onClick={() => onIncrement(id)}>
-          <h2>CLICK HERE {level} x {multiplier} = {level * multiplier}</h2>
+          CLICK HERE {level} x {multiplier} = {level * multiplier}
         </button>
         <button className="level-btn btn" onClick={() => onLevel(id)}>
-          <h3>+{level } cost: {cost}</h3>
+          +{level } cost: {cost}
         </button>
         <button className="tick-btn btn" onClick={() => onInterval(id)}>
-          <h3>Speed Up Level: {interval} ticks: {Math.round(5000 / interval)}</h3>
+          Speed Up Level: {interval} ticks: {Math.round(5000 / interval)}
         </button>
-      </p>
+      </div>
     );
   }
 }
