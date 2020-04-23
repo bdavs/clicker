@@ -14,16 +14,7 @@
 }
 
 .counter-name {
-  /* display: grid; */
-  /* grid-column-start: 1;
-  grid-column-end: 3 ; */
-  font: Arial;
-  /* flex: 1; */
-  /* text-decoration: overline underline double aqua; */
-  /* color: blueviolet; */
-  /* text-shadow: blueviolet; */
-  /* text-emphasis: bold; */
-  /* text-decoration: dashed; */
+font: helvetica
 }
 
 .multiplier {

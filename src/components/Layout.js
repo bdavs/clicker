@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ScrollerContainer from "./scrollers/ScrollerContainer";
 import CounterContainer from "./counters/CounterContainer";
 import ClickCount from "./ClickCount";
+import Tickertape from "./tickertape/Tickertape"
 
 import "../index.css";
 
@@ -13,6 +14,7 @@ class Layout extends Component {
     return (
       <div className="outer-container">
         <div className="upper-item">
+          <Tickertape />
           <ClickCount />
         </div>
         <div className="container">
