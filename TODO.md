@@ -18,4 +18,16 @@
  - [ ] more minigames
  - [ ] newgame++ 
  - [ ] find better way to clear the local storage 
- 
+ - [ ] tickertape 
+   - [ ] make tickertape scroll at constant speed 
+   - [ ] create list of things todisplay in tickertape 
+ - [ ] scaling
+   - [ ] make all the counters have increasing values
+   - [ ] make things more unlockable
+ - [ ] multiple pages
+   - [ ] settings
+     - [ ] tickertape enable
+     - [ ] display modes
+     - [ ] sounds?
+   - [ ] achievements  
+   - [ ] upgrades? 
