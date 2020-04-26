@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/clicker/static/css/main.6650010e.chunk.css",
+    "main.js": "/clicker/static/js/main.796124a9.chunk.js",
+    "main.js.map": "/clicker/static/js/main.796124a9.chunk.js.map",
+    "runtime-main.js": "/clicker/static/js/runtime-main.874753b8.js",
+    "runtime-main.js.map": "/clicker/static/js/runtime-main.874753b8.js.map",
+    "static/css/2.7de149a3.chunk.css": "/clicker/static/css/2.7de149a3.chunk.css",
+    "static/js/2.ff59deb1.chunk.js": "/clicker/static/js/2.ff59deb1.chunk.js",
+    "static/js/2.ff59deb1.chunk.js.map": "/clicker/static/js/2.ff59deb1.chunk.js.map",
+    "index.html": "/clicker/index.html",
+    "precache-manifest.1cc2b30cd94df2a779410df7760b530a.js": "/clicker/precache-manifest.1cc2b30cd94df2a779410df7760b530a.js",
+    "service-worker.js": "/clicker/service-worker.js",
+    "static/css/2.7de149a3.chunk.css.map": "/clicker/static/css/2.7de149a3.chunk.css.map",
+    "static/css/main.6650010e.chunk.css.map": "/clicker/static/css/main.6650010e.chunk.css.map",
+    "static/js/2.ff59deb1.chunk.js.LICENSE.txt": "/clicker/static/js/2.ff59deb1.chunk.js.LICENSE.txt",
+    "static/media/notifications.css": "/clicker/static/media/notification.c0d3c94c.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.874753b8.js",
+    "static/css/2.7de149a3.chunk.css",
+    "static/js/2.ff59deb1.chunk.js",
+    "static/css/main.6650010e.chunk.css",
+    "static/js/main.796124a9.chunk.js"
+  ]
+}
