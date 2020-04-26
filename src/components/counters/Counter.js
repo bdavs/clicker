@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import "./counters.css";
+
 class Counter extends Component {
 
   setCounterInterval(interval) {
@@ -42,23 +44,28 @@ class Counter extends Component {
       onLevel,
       onInterval,
     } = this.props;
-    // console.log(this.props)
+
     return (
-      <p>
-        Name: {name} | Multiplier: {multiplier}<br />
-        Clicked: {clicks} times{" "}
-        <button onClick={() => onIncrement(id)}>
-          <h2>CLICK HERE {level} x {multiplier} = {level * multiplier}</h2>
-        </button>{" "}
-        <br />
-        <button onClick={() => onLevel(id)}>
-          <h3>+{level } cost: {cost}</h3>
-        </button>{" "}
-        <button onClick={() => onInterval(id)}>
-          <h3>Speed Up Level: {interval}</h3>
-        </button>{" "}
-        ticks: {Math.round(5000 / interval)}
-      </p>
+      <div  className="counter-item">
+        <div className="counter-name" >
+          {name}:   
+        </div>
+        <div className="multiplier">
+          Multiplier: {multiplier}
+        </div>
+        <div className="clicks">
+          Clicked: {clicks} times
+        </div>
+        <button className="click-btn btn" onClick={() => onIncrement(id)}>
+          CLICK HERE {level} x {multiplier} = {level * multiplier}
+        </button>
+        <button className="level-btn btn" onClick={() => onLevel(id)}>
+          +{level } cost: {cost}
+        </button>
+        <button className="tick-btn btn" onClick={() => onInterval(id)}>
+          Speed Up Level: {interval} ticks: {Math.round(5000 / interval)}
+        </button>
+      </div>
     );
   }
 }

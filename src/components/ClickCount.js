@@ -19,10 +19,11 @@ const fmt = {
   // grouping size of the fraction part
   fractionGroupSize: 0,
   // string to append
-  suffix: ''
+  suffix: 'Sv'
 }
 
 BigNumber.config({
+  DECIMAL_PLACES: 2,
   FORMAT: fmt
 });
 
@@ -30,14 +31,37 @@ class ClickCount extends Component {
   render() {
     const {totalClicks} = this.props;
     const bntc = BigNumber(totalClicks);
-    let myfmt = fmt;
-    if (bntc.e > 3 ){
-      myfmt.suffix = 'thousand'
+    // let myfmt = fmt;
+    let ending = '';
+    let result = 0;
+    const x = bntc.e;
+    switch (true) {
+      case (x < 3):
+          ending = 'nSv'
+          result = bntc.toNumber()
+          break;
+      case (x < 6):
+          ending = 'uSv'
+          result = bntc.div(1e3)
+          break;
+      case (x < 9):
+          ending = 'mSv'
+          result = bntc.div(1e6)
+          break;
+      default:
+          ending = 'Sv'
+          result = bntc.div(1e9)
+          break;
     }
+    
+    const displayedClicks = result + ' ' + ending
+
+    // bntc.toFormat(0,0,myfmt)
+    
     return (
     <div>
       
-      <h1>Clicks:<br/>{bntc.toFormat(0,0,myfmt)}</h1>
+      <h1>Clicks:<br/>{displayedClicks}</h1>
     </div>
     );
   }
