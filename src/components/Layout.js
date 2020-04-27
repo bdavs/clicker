@@ -5,6 +5,7 @@ import ScrollerContainer from "./scrollers/ScrollerContainer";
 import CounterContainer from "./counters/CounterContainer";
 import ClickCount from "./ClickCount";
 import Tickertape from "./tickertape/Tickertape"
+import Menu from "./menu/Menu";
 
 import "../index.css";
 
@@ -17,6 +18,7 @@ class Layout extends Component {
           <Tickertape />
           <ClickCount />
         </div>
+        <Menu />
         <div className="container">
           <CounterContainer />
           <ScrollerContainer />

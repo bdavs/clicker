@@ -1,0 +1,16 @@
+.menu {
+  display: inline-block;
+  align-self: center;
+  margin: 5px 0px 0px 0px;
+}
+
+.menu-btn {
+  color:#333333;
+  background-color: #c2cce8; 
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  outline: none;
+  margin: 2px;
+
+}
