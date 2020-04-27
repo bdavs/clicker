@@ -1,17 +1,26 @@
 .marquee {
+  /* display: none; */
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: #fefefe;
-  color: #333;
+  /* background: #fefefe; */
+  /* color: #333; */
   border: 1px solid #4a4a4a;
+
+
+  color:#111111;
+  background-color: #e2ecf8; 
+  /* font-size: large; */
+  border-radius: 0.5rem;
+  outline: none;
 }
 
 .marquee p {
   position: absolute;
   font-size: 1.5em;
-  width: auto;
-  white-space:nowrap;
+  width: 100%;
+  white-space: nowrap;
+  font: Helvetica;
 
   height: 100%;
   margin: 0;
@@ -22,7 +31,13 @@
   transform: translateX(100%);
   -moz-animation: scroll-left 2s linear infinite;
   -webkit-animation: scroll-left 2s linear infinite;
-  animation: scroll-left 25s linear infinite;
+  /* animation: scroll-left 25s linear infinite; */
+  animation-name: scroll-left;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
   /* animation-delay: 10s; */
 }
 
