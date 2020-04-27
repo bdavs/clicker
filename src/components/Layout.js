@@ -4,10 +4,37 @@ import { connect } from "react-redux";
 import ScrollerContainer from "./scrollers/ScrollerContainer";
 import CounterContainer from "./counters/CounterContainer";
 import ClickCount from "./ClickCount";
-import Tickertape from "./tickertape/Tickertape"
+import Tickertape from "./tickertape/Tickertape";
 import Menu from "./menu/Menu";
+import Settings from "./settings/Settings"
 
 import "../index.css";
+
+function SetLayout(props) {
+  if (props.menu === "main") {
+    return (
+      <div className="main container">
+        <CounterContainer />
+        <ScrollerContainer />
+      </div>
+    );
+  } else if (props.menu === "settings") {
+    return (
+      <div className="settings container">
+        <Settings />
+      </div>
+    );
+  } else if (props.menu === "achievements") {
+    return (
+      <div className="achievements container">
+        <CounterContainer />
+        <ScrollerContainer />
+      </div>
+    );
+  } else {
+    return null
+  }
+}
 
 class Layout extends Component {
   render() {
@@ -19,10 +46,8 @@ class Layout extends Component {
           <ClickCount />
         </div>
         <Menu />
-        <div className="container">
-          <CounterContainer />
-          <ScrollerContainer />
-        </div>
+
+        <SetLayout menu={this.props.menu} />
       </div>
     );
   }
@@ -31,6 +56,7 @@ class Layout extends Component {
 function mapStateToProps(state) {
   return {
     totalClicks: state.counter.totalClicks,
+    menu: state.menu,
   };
 }
 export default connect(mapStateToProps)(Layout);
