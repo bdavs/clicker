@@ -7,63 +7,63 @@
     "cost": 0
   }, {
     "id": 1,
-    "name": "arm xray",
+    "name": "Arm X-Ray",
     "minClicks": 5e3,
     "multiplier": 1000,
     "cost": 10
   }, {
     "id": 3,
-    "name": "dental xray",
-    "minClicks": 1e4,
+    "name": "Dental X-Ray",
+    "minClicks": 3e4,
     "multiplier": 5e3,
     "cost": 100
   }, {
     "id": 4,
-    "name": "daily background radiation",
-    "minClicks": 1e4,
+    "name": "Daily Background Radiation",
+    "minClicks": 1e5,
     "multiplier": 1e4,
-    "cost": 100
+    "cost": 1000
   }, {
     "id": 5,
-    "name": "international flight",
-    "minClicks": 1e4,
+    "name": "International Flight",
+    "minClicks": 1e6,
     "multiplier": 4e4,
-    "cost": 100
+    "cost": 1e4
   }, {
     "id": 6,
-    "name": "mammogram",
-    "minClicks": 1e4,
+    "name": "Mammogram",
+    "minClicks": 1e7,
     "multiplier": 4e5,
-    "cost": 100
+    "cost": 1e5
   }, {
     "id": 7,
-    "name": "head CT Scan",
-    "minClicks": 1e4,
+    "name": "Head CT Scan",
+    "minClicks": 1e8,
     "multiplier": 2e6,
-    "cost": 100
+    "cost": 1e6
   }, {
     "id": 8,
     "name": "1hr at Chernobyl",
-    "minClicks": 1e4,
+    "minClicks": 5e8,
     "multiplier": 6e6,
-    "cost": 100
+    "cost": 1e7
   }, {
     "id": 9,
-    "name": "chest CT scan",
-    "minClicks": 1e4,
+    "name": "Chest CT Scan",
+    "minClicks": 1e9,
     "multiplier": 7e6,
-    "cost": 100
+    "cost": 1e8
   }, {
     "id": 10,
-    "name": "Fukishima amount",
-    "minClicks": 1e4,
+    "name": "Fukishima Amount",
+    "minClicks": 1e10,
     "multiplier":1e8,
-    "cost": 100
+    "cost": 1e9
   }, {
     "id": 11,
-    "name": "chernobyl epicenter amount",
-    "minClicks": 1e4,
+    "name": "Chernobyl Epicenter Amount",
+    "minClicks": 1e11,
     "multiplier":5e10,
-    "cost": 100
+    "cost": 1e10
   }
 ]
