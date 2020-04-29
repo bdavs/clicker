@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 // import { createStore } from "redux";
-import configureStore from "./configureStore"
+import configureStore from "./configureStore";
 import { PersistGate } from "redux-persist/integration/react";
 // import rootReducer from './reducers'
 import "./index.css";
@@ -11,10 +11,14 @@ import "./index.css";
 import Layout from "./components/Layout";
 import Notifications from "./components/notifications/Notifications";
 
-const {store, persistor} = configureStore()
+const { store, persistor } = configureStore();
 // createStore(counter);
 
-const render = () =>
+const render = () => {
+  // visit /?debug to purge the localstorage and persist
+  if (window.location.search === "?debug") {
+    persistor.purge();
+  }
   ReactDOM.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -24,6 +28,6 @@ const render = () =>
     </Provider>,
     document.getElementById("root")
   );
-
+};
 render();
 store.subscribe(render);
