@@ -5,12 +5,14 @@ import PropTypes from "prop-types";
 import "./counters.css";
 
 class Counter extends Component {
-
   setCounterInterval(interval) {
     if (interval > 0) {
       clearInterval(this.timer);
       this.delay = Math.round(5000 / interval);
-      this.timer = setInterval(() => this.props.onIncrement(this.props.id), this.delay);
+      this.timer = setInterval(
+        () => this.props.onIncrement(this.props.id),
+        this.delay
+      );
     }
   }
 
@@ -46,21 +48,17 @@ class Counter extends Component {
     } = this.props;
 
     return (
-      <div  className="counter-item">
-        <div className="counter-name" >
-          {name}:   
-        </div>
-        <div className="multiplier">
-          Multiplier: {multiplier}
-        </div>
-        <div className="clicks">
-          Clicked: {clicks} times
+      <div className="counter-item">
+        <div className="text-container">
+          <div className="counter-name">{name}:</div>
+          <div className="multiplier">Multiplier: {multiplier}</div>
+          <div className="clicks">Clicked: {clicks} times</div>
         </div>
         <button className="click-btn btn" onClick={() => onIncrement(id)}>
           CLICK HERE {level} x {multiplier} = {level * multiplier}
         </button>
         <button className="level-btn btn" onClick={() => onLevel(id)}>
-          +{level } cost: {cost}
+          +{level} cost: {cost}
         </button>
         <button className="tick-btn btn" onClick={() => onInterval(id)}>
           Speed Up Level: {interval} ticks: {Math.round(5000 / interval)}
@@ -84,9 +82,11 @@ function mapStateToProps(state, ownProps) {
     totalClicks: state.counter.totalClicks,
     clicks: state.counter.counterData.find((p) => p.id === ownProps.id).clicks,
     level: state.counter.counterData.find((p) => p.id === ownProps.id).level,
-    interval: state.counter.counterData.find((p) => p.id === ownProps.id).interval,
+    interval: state.counter.counterData.find((p) => p.id === ownProps.id)
+      .interval,
     cost: state.counter.counterData.find((p) => p.id === ownProps.id).cost,
-    multiplier: state.counter.counterData.find((p) => p.id === ownProps.id).multiplier,
+    multiplier: state.counter.counterData.find((p) => p.id === ownProps.id)
+      .multiplier,
   };
 }
 

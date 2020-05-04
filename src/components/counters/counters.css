@@ -13,16 +13,23 @@
   padding: 5px;
 }
 
+.text-container {
+
+}
+
 .counter-name {
 font: helvetica
 }
 
 .multiplier {
-  display: none;
+  /* display: none; */
+  font-size: .75rem;
 }
 
 .clicks {
   display: none;
+  /* font-size: ; */
+
 }
 
 
